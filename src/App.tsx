@@ -36,9 +36,13 @@ const App: React.FC = () => {
     };
 
     return (
-        <GridContextProvider>
-            <Grid gridNumbers={gridNumbers} />
-        </GridContextProvider>
+        <>
+            <h1>Number Multiples</h1>
+            <p>Select a number to see the multiples of that&nbsp;number.</p>
+            <GridContextProvider>
+                <Grid gridNumbers={gridNumbers} />
+            </GridContextProvider>
+        </>
     );
 };
 

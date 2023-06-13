@@ -1,6 +1,7 @@
 import { useState, useEffect, useRef } from 'react';
 import Grid from './components/Grid';
 import { GridContextProvider } from './context/GridContext';
+import 'normalize.css';
 import './assets/css/App.css';
 
 const App: React.FC = () => {
@@ -37,11 +38,15 @@ const App: React.FC = () => {
 
     return (
         <>
-            <h1>Number Multiples</h1>
-            <p>Select a number to see the multiples of that&nbsp;number.</p>
-            <GridContextProvider>
-                <Grid gridNumbers={gridNumbers} />
-            </GridContextProvider>
+            <header>
+                <h1>Number Multiples</h1>
+                <p>Select a number to see the multiples of that&nbsp;number.</p>
+            </header>
+            <main>
+                <GridContextProvider>
+                    <Grid gridNumbers={gridNumbers} />
+                </GridContextProvider>
+            </main>
         </>
     );
 };

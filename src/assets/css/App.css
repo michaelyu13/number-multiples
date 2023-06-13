@@ -62,3 +62,12 @@ h1 {
         font-size: 36px;
     }
 }
+
+.btn:hover {
+    outline: 3px solid #dc3545;
+}
+
+.btn--highlighted {
+    background-color: #007bff;
+    color: #fff;
+}

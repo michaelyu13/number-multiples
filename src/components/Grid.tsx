@@ -7,7 +7,7 @@ interface Props {
     }[];
 }
 
-const Grid = ({ gridNumbers }: Props) => {
+const Grid: React.FC<Props> = ({ gridNumbers }) => {
     return (
         <div className="grid-numbers">
             {gridNumbers.map((gridNumber) => {

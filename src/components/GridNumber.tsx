@@ -1,11 +1,31 @@
+import { useGridContext } from '../context/GridContext';
+
 interface Props {
     id: string;
     number: number;
 }
+const GridNumber: React.FC<Props> = ({ id, number }) => {
+    const gridContext = useGridContext();
 
-const GridNumber = ({ id, number }: Props) => {
+    const handleNumberClick = (number: number) => {
+        if (number % gridContext.selectedGridNumber === 0) {
+            return gridContext.setSelectedGridNumber(0);
+        }
+
+        return gridContext.setSelectedGridNumber(number);
+    };
+
+    const isNumberMultiple = (number: number) => {
+        return number % gridContext.selectedGridNumber === 0;
+    };
+
     return (
-        <button className="btn" key={id} value={number}>
+        <button
+            onClick={() => handleNumberClick(number)}
+            className={`btn ${isNumberMultiple(number) ? 'btn--highlighted' : ''}`}
+            key={id}
+            value={number}
+        >
             {number}
         </button>
     );

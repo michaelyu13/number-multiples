@@ -1,8 +1,9 @@
 import { useState, useEffect, useRef } from 'react';
 import Grid from './components/Grid';
+import { GridContextProvider } from './context/GridContext';
 import './assets/css/App.css';
 
-function App() {
+const App: React.FC = () => {
     interface GridNumbers {
         id: string;
         number: number;
@@ -34,7 +35,11 @@ function App() {
         setGridNumbers(gridNumbersToDisplay);
     };
 
-    return <Grid gridNumbers={gridNumbers} />;
-}
+    return (
+        <GridContextProvider>
+            <Grid gridNumbers={gridNumbers} />
+        </GridContextProvider>
+    );
+};
 
 export default App;

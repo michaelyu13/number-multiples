@@ -6,9 +6,10 @@ Tech stack:
 
 -   React
 -   TypeScript
+-   CSS
 -   React Testing Library
 
-<img width="1298" alt="" src="http://michaelyu.co.uk/assets/img/project-number-multiples.jpg">
+<img width="1298" alt="" src="http://michaelyu.co.uk/assets/img/project-number-multiples-v2.jpg">
 
 ## Live Demo
 

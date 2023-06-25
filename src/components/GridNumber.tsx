@@ -19,10 +19,18 @@ const GridNumber: React.FC<Props> = ({ id, number }) => {
         return number % gridContext.selectedGridNumber === 0;
     };
 
+    const isSelectedNumber = (number: number) => {
+        return number === gridContext.selectedGridNumber;
+    };
+
     return (
         <button
             onClick={() => handleNumberClick(number)}
-            className={`btn ${isNumberMultiple(number) ? 'btn--highlighted' : ''}`}
+            className={`
+                btn
+                ${isNumberMultiple(number) ? 'btn--highlighted' : ''}
+                ${isSelectedNumber(number) && 'btn--selected'}
+            `}
             key={id}
             value={number}
         >

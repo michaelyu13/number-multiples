@@ -58,6 +58,7 @@ p {
     border: 1px solid #333;
     width: 4rem;
     height: 4rem;
+
     font-size: 26px;
     cursor: pointer;
 }
@@ -66,15 +67,24 @@ p {
     .btn {
         width: 5rem;
         height: 5rem;
+
         font-size: 36px;
     }
 }
 
 .btn:hover {
-    outline: 3px solid #dc3545;
+    outline: 3px solid #ef4444;
+}
+
+.btn--highlighted,
+.btn--selected {
+    color: #fff;
 }
 
 .btn--highlighted {
-    background-color: #007bff;
-    color: #fff;
+    background-color: #3b82f6;
+}
+
+.btn--selected {
+    background-color: #fde047;
 }

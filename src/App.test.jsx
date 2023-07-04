@@ -40,7 +40,15 @@ describe('App', () => {
         expect(buttonEl).not.toBeInTheDocument();
     });
 
-    test('Initially all button numbers are not highlighted', () => {
+    test('Initially no button numbers are selected', () => {
+        const allButtons = screen.getAllByRole('button');
+
+        allButtons.forEach((button) => {
+            expect(button).not.toHaveClass('btn--selected');
+        });
+    });
+
+    test('Initially no button numbers are highlighted', () => {
         const allButtons = screen.getAllByRole('button');
 
         allButtons.forEach((button) => {

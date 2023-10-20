@@ -1,6 +1,9 @@
+let portNumber = '5173';
+let appUrl = `http://localhost:${portNumber}/number-multiples/`;
+
 describe('template spec', () => {
     it('Check initial page render is correct', () => {
-        cy.visit('http://localhost:5173/number-multiples/');
+        cy.visit(appUrl);
 
         // H1 Heading exist
         cy.get('h1')
@@ -30,7 +33,7 @@ describe('template spec', () => {
     });
 
     it('Selecting a button [10] and deslecting it works', () => {
-        cy.visit('http://localhost:5173/number-multiples/');
+        cy.visit(appUrl);
 
         // Select button 10
         cy.get('button').contains(/^10$/i).click();
@@ -61,7 +64,7 @@ describe('template spec', () => {
     });
 
     it('Selecting a button [10] and then selecting another button [8] works', () => {
-        cy.visit('http://localhost:5173/number-multiples/');
+        cy.visit(appUrl);
 
         // Select button 10
         cy.get('button').contains(/^10$/i).click();
@@ -107,7 +110,7 @@ describe('template spec', () => {
     });
 
     it('Selecting a button [10] and then selecting a highlighted button [40] that is a multiple works', () => {
-        cy.visit('http://localhost:5173/number-multiples/');
+        cy.visit(appUrl);
 
         // Select button 10
         cy.get('button').contains(/^10$/i).click();

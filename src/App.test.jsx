@@ -1,5 +1,5 @@
+import { fireEvent, render, screen } from '@testing-library/react';
 import React from 'react';
-import { render, fireEvent, screen } from '@testing-library/react';
 
 import App from './App';
 
@@ -44,7 +44,7 @@ describe('App', () => {
         const allButtons = screen.getAllByRole('button');
 
         allButtons.forEach((button) => {
-            expect(button).not.toHaveClass('btn--selected');
+            expect(button).not.toHaveClass('selected');
         });
     });
 
@@ -52,19 +52,17 @@ describe('App', () => {
         const allButtons = screen.getAllByRole('button');
 
         allButtons.forEach((button) => {
-            expect(button).not.toHaveClass('btn--highlighted');
+            expect(button).not.toHaveClass('highlighted');
         });
     });
 
     test('Select button number 30 and ensure its first 4 multiples get highlighted', () => {
-        const classNameBtnHighlighted = 'btn--highlighted';
+        const classNameBtnHighlighted = 'highlighted';
 
         const button30El = screen.queryByRole('button', { name: 30 });
         const button60El = screen.queryByRole('button', { name: 60 });
         const button90El = screen.queryByRole('button', { name: 90 });
         const button120El = screen.queryByRole('button', { name: 120 });
-
-        expect(button30El).toHaveClass('btn');
 
         fireEvent.click(button30El);
 
@@ -75,15 +73,11 @@ describe('App', () => {
     });
 
     test('Select the same button number a second time removes highlighting from all buttons', () => {
-        const classNameBtn = 'btn';
-        const classNameBtnHighlighted = 'btn--highlighted';
+        const classNameBtnHighlighted = 'highlighted';
 
         const allButtons = screen.getAllByRole('button');
         const button10El = screen.queryByRole('button', { name: 10 });
         const button20El = screen.queryByRole('button', { name: 20 });
-
-        expect(button10El).toHaveClass(classNameBtn);
-        expect(button20El).toHaveClass(classNameBtn);
 
         fireEvent.click(button10El);
 
@@ -98,15 +92,11 @@ describe('App', () => {
     });
 
     test('Select a button number and then select a different number that is a multiple removes highlighting from all buttons', () => {
-        const classNameBtn = 'btn';
-        const classNameBtnHighlighted = 'btn--highlighted';
+        const classNameBtnHighlighted = 'highlighted';
 
         const allButtons = screen.getAllByRole('button');
         const button10El = screen.queryByRole('button', { name: 10 });
         const button20El = screen.queryByRole('button', { name: 20 });
-
-        expect(button10El).toHaveClass(classNameBtn);
-        expect(button20El).toHaveClass(classNameBtn);
 
         fireEvent.click(button10El);
 
@@ -121,23 +111,19 @@ describe('App', () => {
     });
 
     test('Select a button number and then select a different button number that is not a multiple will not remove highlighting from all buttons', () => {
-        const classNameBtn = 'btn';
-        const classNameBtnHighlighted = 'btn--highlighted';
+        const classNameBtnHighlighted = 'highlighted';
 
         const button10El = screen.queryByRole('button', { name: 10 });
         const button12El = screen.queryByRole('button', { name: 12 });
 
-        expect(button10El).toHaveClass(classNameBtn);
-        expect(button12El).toHaveClass(classNameBtn);
-
         fireEvent.click(button10El);
 
         expect(button10El).toHaveClass(classNameBtnHighlighted);
-        expect(button12El).toHaveClass(classNameBtn);
+        expect(button12El).not.toHaveClass(classNameBtnHighlighted);
 
         fireEvent.click(button12El);
 
-        expect(button10El).toHaveClass(classNameBtn);
+        expect(button10El).not.toHaveClass(classNameBtnHighlighted);
         expect(button12El).toHaveClass(classNameBtnHighlighted);
     });
 });

@@ -1,8 +1,10 @@
-import { useState, useEffect, useRef } from 'react';
-import Grid from './components/Grid';
+import { useEffect, useRef, useState } from 'react';
+import { ThemeProvider } from 'styled-components';
+import { Container, Main } from './App.style';
+import Grid from './components/Grid/Grid';
+import Header from './components/Header/SiteHeader';
 import { GridContextProvider } from './context/GridContext';
-import 'normalize.css';
-import './assets/css/App.css';
+import theme from './styles/theme';
 
 const App: React.FC = () => {
     interface GridNumbers {
@@ -37,17 +39,17 @@ const App: React.FC = () => {
     };
 
     return (
-        <>
-            <header>
-                <h1>Number Multiples</h1>
-                <p>Select a number to see the multiples of that&nbsp;number.</p>
-            </header>
-            <main>
-                <GridContextProvider>
-                    <Grid gridNumbers={gridNumbers} />
-                </GridContextProvider>
-            </main>
-        </>
+        <ThemeProvider theme={theme}>
+            <Container>
+                <Header />
+
+                <Main>
+                    <GridContextProvider>
+                        <Grid gridNumbers={gridNumbers} />
+                    </GridContextProvider>
+                </Main>
+            </Container>
+        </ThemeProvider>
     );
 };
 

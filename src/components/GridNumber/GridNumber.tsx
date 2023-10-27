@@ -1,4 +1,5 @@
-import { useGridContext } from '../context/GridContext';
+import { useGridContext } from '../../context/GridContext';
+import { Button } from './GridNumber.style';
 
 interface Props {
     id: string;
@@ -24,18 +25,17 @@ const GridNumber: React.FC<Props> = ({ id, number }) => {
     };
 
     return (
-        <button
+        <Button
             onClick={() => handleNumberClick(number)}
             className={`
-                btn
-                ${isNumberMultiple(number) ? 'btn--highlighted' : ''}
-                ${isSelectedNumber(number) && 'btn--selected'}
+                ${isNumberMultiple(number) ? 'highlighted' : ''}
+                ${isSelectedNumber(number) && 'selected'}
             `}
             key={id}
             value={number}
         >
             {number}
-        </button>
+        </Button>
     );
 };
 

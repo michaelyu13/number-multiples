@@ -1,4 +1,5 @@
-import GridNumber from './GridNumber';
+import GridNumber from '../GridNumber/GridNumber';
+import { GridNumbers } from './Grid.style';
 
 interface Props {
     gridNumbers: {
@@ -9,11 +10,11 @@ interface Props {
 
 const Grid: React.FC<Props> = ({ gridNumbers }) => {
     return (
-        <div className="grid-numbers">
+        <GridNumbers>
             {gridNumbers.map((gridNumber) => {
                 return <GridNumber key={gridNumber.id} {...gridNumber} />;
             })}
-        </div>
+        </GridNumbers>
     );
 };
 

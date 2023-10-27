@@ -5,6 +5,8 @@ export const Container = styled.div`
     flex-direction: column;
     align-items: center;
     gap: ${(props) => props.theme.spacingMedium};
+    padding-top: ${(props) => props.theme.spacingLarge};
+    padding-bottom: ${(props) => props.theme.spacingMedium};
     min-height: 100vh;
     background: rgb(161, 176, 255);
 `;

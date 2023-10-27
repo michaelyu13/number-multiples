@@ -6,11 +6,11 @@ Tech stack:
 
 -   React
 -   TypeScript
--   CSS
+-   Styled Components
 -   React Testing Library
 -   Cypress
 
-<img width="1298" alt="" src="http://michaelyu.co.uk/assets/img/project-number-multiples-v2.jpg">
+<img width="1298" alt="" src="http://michaelyu.co.uk/assets/img/project-number-multiples-v3.png">
 
 ## Live Demo
 

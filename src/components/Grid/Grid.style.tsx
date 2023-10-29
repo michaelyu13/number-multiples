@@ -2,7 +2,7 @@ import styled from 'styled-components';
 
 export const GridNumbers = styled.section`
     display: grid;
-    gap: ${(props) => props.theme.spacingHalf};
+    gap: ${(props) => props.theme.spacings.xsmall};
     grid-template-columns: repeat(5, 1fr);
 
     @media (min-width: 768px) {

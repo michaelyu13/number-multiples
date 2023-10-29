@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 
 export const Button = styled.button`
-    border: 1px solid ${(props) => props.theme.colorBlack};
+    border: 1px solid ${(props) => props.theme.colors.black};
     width: 4rem;
     aspect-ratio: 1;
     font-size: 26px;
@@ -16,12 +16,12 @@ export const Button = styled.button`
     }
 
     &.highlighted {
-        color: ${(props) => props.theme.colorWhite};
+        color: ${(props) => props.theme.colors.white};
         background-color: #3b82f6;
     }
 
     &.selected {
-        color: ${(props) => props.theme.colorWhite};
+        color: ${(props) => props.theme.colors.white};
         background-color: #fde047;
     }
 `;

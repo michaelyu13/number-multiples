@@ -4,9 +4,9 @@ export const Container = styled.div`
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: ${(props) => props.theme.spacingMedium};
-    padding-top: ${(props) => props.theme.spacingLarge};
-    padding-bottom: ${(props) => props.theme.spacingMedium};
+    gap: ${(props) => props.theme.spacings.medium};
+    padding-top: ${(props) => props.theme.spacings.large};
+    padding-bottom: ${(props) => props.theme.spacings.medium};
     min-height: 100vh;
     background: rgb(161, 176, 255);
 `;

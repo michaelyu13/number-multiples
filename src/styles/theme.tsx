@@ -1,11 +1,17 @@
-const theme = {
-    colorBlack: '#000',
-    colorWhite: '#fff',
+import { DefaultTheme } from 'styled-components';
 
-    spacingHalf: '0.5rem',
-    spacing: '1rem',
-    spacingMedium: '2rem',
-    spacingLarge: '4rem',
+const theme: DefaultTheme = {
+    colors: {
+        black: '#000',
+        white: '#fff',
+    },
+
+    spacings: {
+        xsmall: '0.5rem',
+        small: '1rem',
+        medium: '2rem',
+        large: '4rem',
+    },
 };
 
 export default theme;
